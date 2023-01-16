@@ -1,0 +1,53 @@
+[학습진행]
+    1.IIP 스키마 툴러보기/설명 
+    2.ORACLE 환경 설치/접속 
+    3.TOOL 사용법 
+        exerd 
+        dbeaver
+    4.SQL 기본 스터디 
+
+[학습분야]
+    DB 질의어 : DML  
+    DB 개발자 : DML, DDL  // 우리의 목표 
+    DB 어드민 : DML, DDL, DCL
+    데이터 사이언티스트 : Tool Base Data Handling 
+
+[database schema]
+    exerd 설치 & 사용법 
+    iip schema 리뷰 
+
+[database server]
+    
+    docker 환경 oracle 설치 :
+
+        // PULL 이미지 
+        docker pull jaspeen/oracle-xe-11g
+
+        // 컨테이너 실행 
+        docker run --name oracle11g -d -p 8080:8089 -p 1521:1521 jaspeen/oracle-xe-11g
+
+        // sqlplus 접속 
+        docker exec -it oracle11g sqlplus
+        (id/password : system/oralce)
+
+        //버전 확인 
+        SQL> select instance_name, version, status from v$instance;
+
+        //컨테이너 bash 접속 
+        docker exec -it oracle11g bash
+
+
+
+[client application]
+
+        //DB 접속Tool 설치 : dbeaver 
+        https://dbeaver.io/download/
+        Host: localhost
+        Database: XE 
+        Port: 1521 
+        Username: system
+        Password: oracle
+
+
+[SQL Tutorial]
+    https://www.w3schools.com/sql/default.asp
