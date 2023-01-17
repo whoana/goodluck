@@ -1,7 +1,43 @@
 본 공간은 신입사원들의 교육여정을 기록하고 자료를 공유하기 위한 공간입니다.
 
-[미팅]
+[COURSE]
 
+    - 업무소개
+        eai
+        iip
+        개발업무
+
+    - 데이터베이스 
+        schema
+        ex-erd
+        database server
+        database client
+        sql standard
+
+    - 개발환경
+        java
+        maven
+        tomcat        
+        eclipse
+        sts
+        vsc
+
+    - Language
+        java
+        javascript
+
+    - Framework
+        spring
+        spring-batch
+        mybatis
+        kendo-ui
+
+    - 실전개발 
+        backend
+        frontend
+
+[미팅]
+    
     [예정]
         2023.01.19
             Docker 오라클환경구축
