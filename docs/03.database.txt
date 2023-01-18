@@ -51,3 +51,5 @@
 
 [SQL Tutorial]
     https://www.w3schools.com/sql/default.asp
+    https://www.youtube.com/watch?v=HXV3zeQKqGY
+    
