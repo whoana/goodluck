@@ -16,3 +16,7 @@ SELECT
 -- 등록일은 db의 현재 시간을 얻어와 사용하도록 
 -- 등록일을 INSERT 
 -- 등록일 REG_DATE VARCHAR(14) 
+
+
+-- date 문자열 varchar(17) 변환
+select to_char(current_timestamp(3),'yyyymmddhh24missff') from dual; 
