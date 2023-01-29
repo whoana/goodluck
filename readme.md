@@ -42,6 +42,10 @@
 
     [완료]
 
+        2023.01.27
+            SQL 표준 JOIN STATEMENT 작성 실습 
+                인터페이스 리스트 및  상세 정보 조회(INNER OUTER 조인)
+
         2023.01.19
             SQL 표준 JOIN STATEMENT 작성 실습 
                 인터페이스 정보 조회(공통코드 조인) 
@@ -72,3 +76,4 @@
     docs/03.database.txt   // 2023.01.16
     resources/TAN0201.sql  // 2023.01.18, 인터페이스 데이터(조인문 작성용 샘플 데이터) 
     resources/TSU0301.sql  // 2023.01.18, 공통코드 데이터 (조인문 작성용 샘플 데이터) 
+    resources/인터페이스리스트및상세조회.sql  // 2023.01.27 (조인문 GUIDE) 
