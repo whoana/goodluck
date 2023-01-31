@@ -8,3 +8,5 @@ SELECT
  WHERE a.REG_DATE >= '20220101' || '000000000'
 GROUP BY substr(a.REG_DATE,1, 8) , a.MOD_USER
 ORDER BY 1 desc
+dsfdsffds
+
