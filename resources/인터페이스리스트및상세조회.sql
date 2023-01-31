@@ -4,21 +4,17 @@
 SELECT 	
 		 a.INTEGRATION_ID	AS "인터페이스ID"
 		,a.INTERFACE_NM		AS "인터페이스명"
---		,b.STATUS 
-		,''					AS "상태명"
+		,cd0.NM				AS "상태명"
 		,b01.BUSINESS_NM	AS "업무명"
 		,c01.SYSTEM_NM  	AS "송신시스템명"
 		,d01.SYSTEM_NM  	AS "수신시스템명"
---		,a.DATA_PR_DIR
-		,''					AS "데이터처리방향"
---		,a.APP_PR_METHOD
-		,'' 				AS "APP처리방식"
---		,a.DATA_PR_DIR
-		,''					AS "데이터처리방향"
+		,cd1.NM 			AS "APP처리방식"
+		,cd2.NM				AS "데이터처리방식"
+		,cd3.NM				AS "데이터처리방향"
 		,a01.USER_NM 		AS "등록자명"
-		,a.REG_DATE
+		,a.REG_DATE			AS "등록일"
 		,a02.USER_NM 		AS "수정자명"
-		,a.MOD_DATE
+		,a.MOD_DATE			AS "수정일"
   	  FROM TAN0201 a
 INNER JOIN TAN0101 b
 		ON a.INTERFACE_ID = b.INTERFACE_ID 
@@ -38,28 +34,58 @@ INNER JOIN TIM0101 d01
 		ON d01.SYSTEM_ID = d.SYSTEM_ID
 INNER JOIN tsu0101 a01 
 		ON a01.USER_ID = a.REG_USER 
-LEFT OUTER JOIN tsu0101 a02 
-		ON a02.USER_ID = a.MOD_USER
+LEFT OUTER JOIN tsu0101 a02 ON a02.USER_ID = a.MOD_USER
+LEFT OUTER JOIN TSU0301 cd0 ON b.STATUS         = cd0.CD AND cd0.LEVEL1 = 'AN' AND cd0.LEVEL2 = '01'
+LEFT OUTER JOIN TSU0301 cd1 ON a.APP_PR_METHOD  = cd1.CD AND cd1.LEVEL1 = 'IM' AND cd1.LEVEL2 = '02'
+LEFT OUTER JOIN TSU0301 cd2 ON a.DATA_PR_METHOD = cd2.CD AND cd2.LEVEL1 = 'IM' AND cd2.LEVEL2 = '12'
+LEFT OUTER JOIN TSU0301 cd3 ON a.DATA_PR_DIR    = cd3.CD AND cd3.LEVEL1 = 'IM' AND cd3.LEVEL2 = '01'
+	 WHERE b.STATUS = 'A1'
+	   AND a.DEL_YN = 'N'	
+	   AND b.DEL_YN = 'N'
+--	   AND a.INTEGRATION_ID  = 'NISCTPO00001'
+ORDER BY a.REG_DATE DESC 
 		
 -------------------------
 -- 인터페이스 상세 조회
 -------------------------
-SELECT 
-	 인터페이스ID(인티그레이션ID)
-	,인터페이스명 
-	,상태명 
-	,업무명  
-	,송신시스템명 
-	,수신시스템명 
-	,데이터처리방식명  
-	,APP처리방식
-	,데이터처리방향명 		
-	,등록일 (yyyymmdd hh24miss)
-	,등록자명 
-	,수정일 
-	,수정자명 
-	,송신담당자명 
-	,수신담당자명  
-  FROM tan0201
- WHERE INTERFACE_ID = 'F@00000508'
+SELECT 	
+		 a.INTEGRATION_ID	AS "인터페이스ID"
+		,a.INTERFACE_NM		AS "인터페이스명"
+		,cd0.NM				AS "상태명"
+		,b01.BUSINESS_NM	AS "업무명"
+		,c01.SYSTEM_NM  	AS "송신시스템명"
+		,d01.SYSTEM_NM  	AS "수신시스템명"
+		,cd1.NM 			AS "APP처리방식"
+		,cd2.NM				AS "데이터처리방식"
+		,cd3.NM				AS "데이터처리방향"
+		,a01.USER_NM 		AS "등록자명"
+		,a.REG_DATE			AS "등록일"
+		,a02.USER_NM 		AS "수정자명"
+		,a.MOD_DATE			AS "수정일"
+		,a04.USER_NM || decode(a03.ROLE_TYPE, '0', '(송신담당자)', '2', '(수신담당자)', '(허브담당자') AS "담당자"
+  	  FROM TAN0201 a
+INNER JOIN TAN0101 b
+		ON a.INTERFACE_ID = b.INTERFACE_ID 
+	   AND a.INTERFACE_ID = 'F@00000421'
+INNER JOIN TIM0301 b01
+        ON b01.BUSINESS_ID = b.BUSINESS_ID 
+INNER JOIN TAN0213 c
+		ON a.INTERFACE_ID = c.INTERFACE_ID 
+	   AND c.NODE_TYPE = '0'
+	   AND c.SEQ = (SELECT max(SEQ) FROM TAN0213 WHERE INTERFACE_ID = c.INTERFACE_ID AND NODE_TYPE = '0')
+INNER JOIN	TIM0101 c01 
+		ON c01.SYSTEM_ID = c.SYSTEM_ID 
+INNER JOIN TAN0213 d
+		ON a.INTERFACE_ID = d.INTERFACE_ID 
+	   AND d.NODE_TYPE = '2'	   
+	   AND d.SEQ = (SELECT max(SEQ) FROM TAN0213 WHERE INTERFACE_ID = d.INTERFACE_ID AND NODE_TYPE = '2')
+INNER JOIN TIM0101 d01 ON d01.SYSTEM_ID = d.SYSTEM_ID
+INNER JOIN TSU0101 a01 ON a01.USER_ID = a.REG_USER 
+LEFT OUTER JOIN TSU0101 a02 ON a02.USER_ID = a.MOD_USER
+LEFT OUTER JOIN TSU0301 cd0 ON b.STATUS         = cd0.CD AND cd0.LEVEL1 = 'AN' AND cd0.LEVEL2 = '01'
+LEFT OUTER JOIN TSU0301 cd1 ON a.APP_PR_METHOD  = cd1.CD AND cd1.LEVEL1 = 'IM' AND cd1.LEVEL2 = '02'
+LEFT OUTER JOIN TSU0301 cd2 ON a.DATA_PR_METHOD = cd2.CD AND cd2.LEVEL1 = 'IM' AND cd2.LEVEL2 = '12'
+LEFT OUTER JOIN TSU0301 cd3 ON a.DATA_PR_DIR    = cd3.CD AND cd3.LEVEL1 = 'IM' AND cd3.LEVEL2 = '01'
+LEFT OUTER JOIN TAN0219 a03 ON a.INTERFACE_ID   = a03.INTERFACE_ID AND a03.DEL_YN  = 'N'
+LEFT OUTER JOIN TSU0101 a04 ON a03.USER_ID      = a04.USER_ID 
 ;
