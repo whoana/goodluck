@@ -1,0 +1,202 @@
+03 개발환경 
+    3.1 자바
+
+        역사 
+            선마이크로시스템 제임스고슬링이 창시자.
+
+            1995년 쯤... 탄생 기억이 가물 가물 
+
+            JVM(Java Virtual Machine) 하에서 프로그램을 개발/실행하여 크로스플랫폼 지원(VM이 설치되는 어떤 OS 환경에서도 똑같은 소스의 자바 프로그램이 실행될 수 있다)
+            
+            JDK(JAVA DEVELOPMENT KIT)1.2 버전부터 본격적으로 사용됨.
+            
+            한때 EJB(ENTERPRISE JAVA BEAN) 이라는 분상환경 기술과 함께 활용되면서 전성기를 맞음. (https://ko.wikipedia.org/wiki/엔터프라이즈_자바빈즈)
+            
+            이후 개발/유지 보수에 복잡한 EJB 스펙을 뒤로하고 상대적으로 가벼운 spring framewhork 의 출현으로 다시 전성기.
+
+            선마이크로시스템이 망해버리고 오라클이 인수(2010 년)
+
+            이후 오라클에서 자바를 상용화하였고(돈을 내야 기술지원이 가능하다는 얘기)
+
+            현재 1.8 버전까지는 오픈되어있는 소스를 사용하면 무료로 사용 가능
+
+        버전 
+            2023년 현재 여러 회사 또는 단체에서 JVM 을 출시하였다.
+            여러 단체 또는 회사들이 동일 버전의 JVM 을 각자 출시하고 있다.
+            개발에 주로 사용하는 버전은 오라클의 오픈 JDK이며 
+            최근에는 azul사의 제품도 다운로드 사이트가 잘 되어있어서 많이 사용되는 것으로 보인다.
+            모코엠시스 제품 개발시 주요 JVM 버전은 1.8 이며, 
+            공공기관 납품 제품들은 오래된 환경을 고려하여 JVM 1.6 이 들어가 있는 경우도 있어
+            상황에 따라 버전을 적용해야한다.
+
+        사이트 
+            아래는 대표되는 JVM 리스트이다.
+                
+                JVM LIST
+                
+                    oralce(상용) : Java 19 and Java 17 available now
+                        https://www.oracle.com/kr/java/technologies/downloads/
+
+                    oracle 지원 오픈 JDK
+                        https://openjdk.org/install/ 
+                        
+                    이클립스 재단 JDK
+                        https://adoptopenjdk.net/ 
+                        
+                    azul 
+                        https://www.azul.com/downloads/?package=jdk#download-openjdk 
+                    
+                    마이크로소프트:
+                        https://learn.microsoft.com/ko-kr/java/openjdk/download 
+
+        설치
+            설치 실습을 진행해 본다.
+                1) oralce 의 오픈 JDK 8 버전을 설치한다.
+                    https://jdk.java.net/java-se-ri/8-MR4
+
+                2) 환경설정변수 설정 
+                    리눅스 :
+                        export JAVA_HOME={설치위치}
+                        export PATH=${PATH}:${JAVA_HOME}/bin
+                    윈도우즈 : 
+                        set JAVA_HOME={설치위치}
+                        set PATH=%PATH%;%JAVA_HOME%/bin
+
+                3) 명령 
+                    명령창 또는 터미널 오픈 후 
+                    버전 확인 
+                        java -version
+                        java version "1.8.0_251"
+                        Java(TM) SE Runtime Environment (build 1.8.0_251-b08)
+                        Java HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)  
+
+                    소스컴파일 명령 
+                        javac
+                        Usage: javac <options> <source files>
+                        where possible options include:
+                        -g                         Generate all debugging info
+                        -g:none                    Generate no debugging info
+                        -g:{lines,vars,source}     Generate only some debugging info
+                        -nowarn                    Generate no warnings
+                        -verbose                   Output messages about what the compiler is doing
+                        -deprecation               Output source locations where deprecated APIs are used
+                        -classpath <path>          Specify where to find user class files and annotation processors
+                        -cp <path>                 Specify where to find user class files and annotation processors
+                        -sourcepath <path>         Specify where to find input source files
+                        -bootclasspath <path>      Override location of bootstrap class files
+                        -extdirs <dirs>            Override location of installed extensions
+                        -endorseddirs <dirs>       Override location of endorsed standards path
+                        -proc:{none,only}          Control whether annotation processing and/or compilation is done.
+                        -processor <class1>[,<class2>,<class3>...] Names of the annotation processors to run; bypasses default discovery process
+                        -processorpath <path>      Specify where to find annotation processors
+                        -parameters                Generate metadata for reflection on method parameters
+                        -d <directory>             Specify where to place generated class files
+                        -s <directory>             Specify where to place generated source files
+                        -h <directory>             Specify where to place generated native header files
+                        -implicit:{none,class}     Specify whether or not to generate class files for implicitly referenced files
+                        -encoding <encoding>       Specify character encoding used by source files
+                        -source <release>          Provide source compatibility with specified release
+                        -target <release>          Generate class files for specific VM version
+                        -profile <profile>         Check that API used is available in the specified profile
+                        -version                   Version information
+                        -help                      Print a synopsis of standard options
+                        -Akey[=value]              Options to pass to annotation processors
+                        -X                         Print a synopsis of nonstandard options
+                        -J<flag>                   Pass <flag> directly to the runtime system
+                        -Werror                    Terminate compilation if warnings occur
+                        @<filename>                Read options and filenames from file
+                    
+                    실행명령 
+                        java
+                        사용법: java [-options] class [args...] (클래스 실행)
+                                또는  
+                              java [-options] -jar jarfile [args...] (jar 파일 실행)
+                                여기서 options는 다음과 같습니다.
+                                    -d32	  사용 가능한 경우 32비트 데이터 모델을 사용합니다.
+                                    -d64	  사용 가능한 경우 64비트 데이터 모델을 사용합니다.
+                                    -server	  "server" VM을 선택합니다.
+                                                기본 VM은 server입니다.,
+                                                서버급 시스템에서 실행 중이기 때문입니다.
+
+
+                                    -cp <디렉토리 및 zip/jar 파일의 클래스 검색 경로>
+                                    -classpath <디렉토리 및 zip/jar 파일의 클래스 검색 경로>
+                                                클래스 파일을 검색할 :(으)로 구분된 디렉토리,
+                                                JAR 아카이브 및 ZIP 아카이브 목록입니다.
+                                    -D<name>=<value>
+                                                시스템 속성을 설정합니다.
+                                    -verbose:[class|gc|jni]
+                                                상세 정보 출력을 사용으로 설정합니다.
+                                    -version      제품 버전을 인쇄한 후 종료합니다.
+                                    -version:<value>
+                                                경고: 이 기능은 사용되지 않으며
+                                                이후 릴리스에서 제거됩니다.
+                                                실행할 버전을 지정해야 합니다.
+                                    -showversion  제품 버전을 인쇄한 후 계속합니다.
+                                    -jre-restrict-search | -no-jre-restrict-search
+                                                경고: 이 기능은 사용되지 않으며
+                                                이후 릴리스에서 제거됩니다.
+                                                버전 검색에서 사용자 전용 JRE를 포함/제외합니다.
+                                    -? -help      이 도움말 메시지를 인쇄합니다.
+                                    -X            비표준 옵션에 대한 도움말을 인쇄합니다.
+                                    -ea[:<packagename>...|:<classname>]
+                                    -enableassertions[:<packagename>...|:<classname>]
+                                                세분성이 지정된 검증을 사용으로 설정합니다.
+                                    -da[:<packagename>...|:<classname>]
+                                    -disableassertions[:<packagename>...|:<classname>]
+                                                세분성이 지정된 검증을 사용 안함으로 설정합니다.
+                                    -esa | -enablesystemassertions
+                                                시스템 검증을 사용으로 설정합니다.
+                                    -dsa | -disablesystemassertions
+                                                시스템 검증을 사용 안함으로 설정합니다.
+                                    -agentlib:<libname>[=<options>]
+                                                <libname> 고유 에이전트 라이브러리를 로드합니다(예: -agentlib:hprof).
+                                                -agentlib:jdwp=help 및 -agentlib:hprof=help도 참조하십시오.
+                                    -agentpath:<pathname>[=<options>]
+                                                전체 경로명을 사용하여 고유 에이전트 라이브러리를 로드합니다.
+                                    -javaagent:<jarpath>[=<options>]
+                                                Java 프로그래밍 언어 에이전트를 로드합니다. java.lang.instrument를 참조하십시오.
+                                    -splash:<imagepath>
+                                                이미지가 지정된 스플래시 화면을 표시합니다.
+                                자세한 내용은 http://www.oracle.com/technetwork/java/javase/documentation/index.html을 참조하십시오.
+                        
+                        jps 자바 프로세스 리스트  
+                            https://docs.oracle.com/javase/7/docs/technotes/tools/share/jps.html
+                            example : 
+                                jps
+
+                        jstat 메모리 상태 모니터링
+                            https://docs.oracle.com/javase/7/docs/technotes/tools/share/jstat.html#examples
+                            example : 
+                                jstat -gcnew -h3 [lvmid] 1000
+                        
+                        jstack 자바 스레드덤프 
+                            https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr016.html
+                            example : 
+                                
+
+                        jmap 자바 힙덤프 
+                            https://docs.oracle.com/en/java/javase/17/docs/specs/man/jmap.html
+                            example : 
+                                jmap -histo:live 16070
+
+
+        소스 작성   
+            1) 메모장 또는 vi 및 기타 선호하는 에디터에서 소스 입력
+                src/
+                    com.example.main.
+                                    PropertiesMain.java 
+                                    NeverEndingMain.java
+
+            2) 명령창에서 소스 컴파일 
+ 
+                javac -d classes ./src/*/*/*/PropertiesMain.java
+                javac -d classes ./src/*/*/*/NeverEndingMain.java
+
+            3) 명령창에서 소스 실행 
+                
+                java -cp ./classes com.example.main.PropertiesMain -Dmy.msg=hello Main 1 2 3 4 5
+                java -cp ./classes com.example.main.NeverEndingMain
+        
+
+

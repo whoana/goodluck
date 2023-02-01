@@ -2,43 +2,43 @@
 
 [COURSE]
 
-    - 업무소개
-        eai
-        iip
-        개발업무
+    01 업무소개
+        1.1 eai
+        1.2 iip
+        1.3 개발업무
 
-    - 데이터베이스 
-        schema
-        ex-erd
-        database server
-        database client
-        sql standard
+    02 데이터베이스 
+        2.1 schema
+        2.2 ex-erd
+        2.3 database server
+        2.4 database client
+        2.5 sql standard    ----------> 2023.01.31 finished
 
-    - 개발환경
-        java
-        maven
-        tomcat        
-        eclipse
-        sts
-        vsc
+    03 개발환경
+        3.1 java
+        3.2 maven
+        3.3 tomcat        
+        3.4 eclipse, sts, vsc
 
-    - Language
-        java
-        javascript
+    04 Language
+        4.1 java
+        4.2 javascript
 
-    - Framework
-        spring
-        spring-batch
-        mybatis
-        kendo-ui
+    05 Framework
+        5.1 spring
+        5.2 spring-batch
+        5.3 mybatis
+        5.4 kendo-ui
 
-    - 실전개발 
-        backend
-        frontend
+    06 실전개발 
+        6.1 backend
+        6.2 frontend
 
 [미팅]
     
     [예정]
+        2023.02.20
+            3 개발환경
 
     [완료]
 

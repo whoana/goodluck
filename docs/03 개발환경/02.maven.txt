@@ -1,0 +1,36 @@
+03 개발환경 
+    3.2 maven
+
+        역할
+            프로젝트 빌드 및 라이브러리 디펜던시 관리 
+
+        버전
+            https://maven.apache.org
+            3.8.7 까지 나왔으나 
+            현재 파트에서 사용중인 버전은 Apache Maven 3.6.3
+
+
+        POM(Project Object Model) 구조 
+
+        설치 
+
+        기본 명령
+
+        스터디 
+            https://maven.apache.org/guides/getting-started/index.html
+        
+        실습 
+            자바 메이븐 프로젝트 생성 및 빌드 
+
+            1) 프로젝트 생성
+                mvn -B archetype:generate -DgroupId=com.example -DartifactId=example -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+            
+            2) 소스 작성 
+
+            3) 빌드 
+                mvn clean
+                mvn package
+                mvn install 
+                mvn test
+                mvn clean package -Dmaven.test.skip=true
+
