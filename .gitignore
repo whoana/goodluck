@@ -1,0 +1,3 @@
+resources/java/classes/Hello1.class
+resources/maven/example/target/classes/com/example/App.class
+resources/maven/example/target/test-classes/com/example/AppTest.class
