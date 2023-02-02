@@ -3,3 +3,11 @@ resources/java/classes/Hello1.class
 resources/maven/example/target/classes/com/example/App.class
 resources/maven/example/target/test-classes/com/example/AppTest.class
 resources/whoana/example/target/
+resources/kyulee/example/target/example-1.0.jar
+resources/kyulee/example/target/maven-archiver/pom.properties
+resources/kyulee/example/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+resources/kyulee/example/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+resources/kyulee/example/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+resources/kyulee/example/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+resources/kyulee/example/target/surefire-reports/com.example.AppTest.txt
+resources/kyulee/example/target/surefire-reports/TEST-com.example.AppTest.xml
