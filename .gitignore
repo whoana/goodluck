@@ -1,4 +1,10 @@
 resources/java/classes
 resources/java/classes/Hello1.class
+resources/whoana/example/target
 resources/maven/example/target/classes/com/example/App.class
 resources/maven/example/target/test-classes/com/example/AppTest.class
+resources/whoana/example/target/example-1.0.jar
+resources/java/classes
+resources/java/classes/com/example/main/NeverEndingMain.class
+resources/java/classes/com/example/main/NeverEndingMain$1.class
+.gitignore
