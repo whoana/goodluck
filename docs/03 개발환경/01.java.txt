@@ -195,7 +195,7 @@
 
             3) 명령창에서 소스 실행 
                 
-                java -cp ./classes com.example.main.PropertiesMain -Dmy.msg=hello Main 1 2 3 4 5
+                java -cp ./classes -Dmy.msg=hello com.example.main.PropertiesMain 1 2 3 4 5
                 java -cp ./classes com.example.main.NeverEndingMain
         
 
