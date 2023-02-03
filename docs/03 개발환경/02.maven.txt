@@ -34,3 +34,28 @@
                 mvn test
                 mvn clean package -Dmaven.test.skip=true
 
+        도커-메이븐 환경 
+            
+            윈도우즈 또는 리눅스 외 환경 사용자가 리눅스 하에서 maven + java 환경에서 작업할 수 있도록 container를 제공한다.
+            1) 이미지 : 
+                https://hub.docker.com/_/maven
+
+            2) 사용법 : 
+                    [최초 실행]
+                        // 빌드할 프로젝트 폴더로 이동 
+                        cd example 
+                        // 이동한 현재 디렉토리를 도커볼륨에 매핑하고 메이븐 이미지를 이용하여 컨테이너 실행
+                        docker run -it --name maven-env -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2 -w /usr/src/mymaven maven:3.3-jdk-8 bash
+                        //리눅스 환경에서 메이븐 명령 실행 
+                        mvn clean package 
+                        java -cp ./target/example-1.0.jar com.example.main.NeverEndingMain
+
+                    [생성된 컨테이너 재실행 후 접속]
+                        // 다음에 다시 접속할 때
+                        //컨테이너 시작 
+                        docker start maven-env 
+                        //컨테이너 접속  
+                        docker exec -it maven-example bash
+                        mvn clean package 
+                        java -cp ./target/example-1.0.jar com.example.main.NeverEndingMain
+
