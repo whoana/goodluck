@@ -33,6 +33,9 @@
                 mvn install 
                 mvn test
                 mvn clean package -Dmaven.test.skip=true
+        
+        멀티프로젝트
+            https://maven.apache.org/guides/getting-started/index.html#how-do-i-build-more-than-one-project-at-once
 
         도커-메이븐 환경 
             
@@ -45,7 +48,7 @@
                         // 빌드할 프로젝트 폴더로 이동 
                         cd example 
                         // 이동한 현재 디렉토리를 도커볼륨에 매핑하고 메이븐 이미지를 이용하여 컨테이너 실행
-                        docker run -it --name maven-env -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2 -w /usr/src/mymaven maven:3.3-jdk-8 bash
+                        docker run -it --name maven-example -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2 -w /usr/src/mymaven maven:3.3-jdk-8 bash
                         //리눅스 환경에서 메이븐 명령 실행 
                         mvn clean package 
                         java -cp ./target/example-1.0.jar com.example.main.NeverEndingMain
@@ -53,7 +56,7 @@
                     [생성된 컨테이너 재실행 후 접속]
                         // 다음에 다시 접속할 때
                         //컨테이너 시작 
-                        docker start maven-env 
+                        docker start maven-example 
                         //컨테이너 접속  
                         docker exec -it maven-example bash
                         mvn clean package 
