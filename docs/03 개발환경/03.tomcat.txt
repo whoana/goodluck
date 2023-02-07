@@ -19,11 +19,11 @@
             
         설치
             리눅스 환경 세팅  
-                export CATALINA_HOME=/Users/whoana/DEV/apps/apache-tomcat-8.5.56
+                export CATALINA_HOME=/Users/whoana/DEV/apps/apache-tomcat-9.0.71
                 export PATH=${PATH}:${CATALINA_HOME}/bin
 
             윈도우즈 환경 세팅 
-                set CATALINA_HOME=/Users/whoana/DEV/apps/apache-tomcat-8.5.56
+                set CATALINA_HOME=/Users/whoana/DEV/apps/apache-tomcat-9.0.71
                 set PATH=${PATH};${CATALINA_HOME}/bin
 
             설치 디렉토리 구성  
