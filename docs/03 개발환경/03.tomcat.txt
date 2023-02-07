@@ -1,0 +1,75 @@
+03 개발환경 
+    3.3 tomcat
+
+        기능
+            WAS(Web Application Server)
+            HyperText Transfer Protocol 기반의 서비스를 수행하는 HTTP 서버 기능도 포함
+            상용 WAS 의 레퍼런스 
+            100% 오픈 소스 
+            서블릿, JSP, 웹소켓, JDBC, JNDI, .... 
+        
+        버전 
+            2023.02 현재 11 까지 나옴
+            8.5.x 버전은 2024년 3월 31일 서비스 종료 예정
+            home page 
+                https://tomcat.apache.org
+
+            어떤 버전을 선택할지?   
+                https://tomcat.apache.org/whichversion.html
+            
+        설치
+            리눅스 환경 세팅  
+                export CATALINA_HOME=/Users/whoana/DEV/apps/apache-tomcat-8.5.56
+                export PATH=${PATH}:${CATALINA_HOME}/bin
+
+            윈도우즈 환경 세팅 
+                set CATALINA_HOME=/Users/whoana/DEV/apps/apache-tomcat-8.5.56
+                set PATH=${PATH};${CATALINA_HOME}/bin
+
+            설치 디렉토리 구성  
+                apache-tomcat-8.5.56
+                    work    // jsp, servlet runtime class 위치 
+                    bin     // tomcat 실행 관리 명령어 
+                    logs    // 로그 
+                    webapps // 웹 어플리케이션 설치 위치 
+                    conf    // 톰켓 설정파일 위치 
+                    lib     // 톰켓이 참조하는 라이브럴리 위치 
+
+        아키텍쳐
+            https://tomcat.apache.org/tomcat-9.0-doc/architecture/overview.html
+
+            0:Server 
+                전체 컨테이너를 대표(톰켓서버를 의미) 
+                
+                1:Service
+                    n개의 Connector 와 Engine을 묶는 Server 하위의 컴포넌트 
+
+                    2:Connector
+                        클라이언트와 통신을 담당
+                        다수의 Connector 가능
+                        HTTP connector : HTTP 통신을 담당, 톰켓 단독 실행시 웹서버 역할
+                        AJP connector : 톰켓과 웹서버(Apache HTTPD server) 연결 
+                                        웹서버를 앞에두고 톰켓을 운영할 경우 사용 
+
+                    2:Engine
+                        다수의 Connector로 부터 들어오는 요청을 처리하고 응답을 돌려는 역할을 한다.
+
+                        3:Host
+                            네트워크 이름과 톰켓과의 연결
+                            
+                            4:Context
+                                웹 애플리케이션을 의미 
+                                전체 웹 애플리케이션에 적용되는 컨텍스트는 conf/context.xml 로 정의
+                                개별 컨텍스트 요소는 명시적으로 정의될 수 있습니다:
+                                개별 적용을 위해서는 응용 프로그램 파일 내부의 /META-INF/context.xml 개별 파일에서.
+
+        명령
+
+        스터디
+            https://tomcat.apache.org/tomcat-9.0-doc/index.html
+            
+        실습    
+
+        도커
+
+

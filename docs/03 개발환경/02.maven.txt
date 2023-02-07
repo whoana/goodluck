@@ -49,12 +49,14 @@
                         cd example 
                         // 이동한 현재 디렉토리를 도커볼륨에 매핑하고 메이븐 이미지를 이용하여 컨테이너 실행
                         docker run -it --name maven-example -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2 -w /usr/src/mymaven maven:3.3-jdk-8 bash
+                        
                         //리눅스 환경에서 메이븐 명령 실행 
                         mvn clean package 
                         java -cp ./target/example-1.0.jar com.example.main.NeverEndingMain
 
                     [생성된 컨테이너 재실행 후 접속]
                         // 다음에 다시 접속할 때
+                        docker stop maven-example 
                         //컨테이너 시작 
                         docker start maven-example 
                         //컨테이너 접속  
