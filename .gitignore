@@ -11,3 +11,5 @@ resources/kyulee/example/target/maven-status/maven-compiler-plugin/testCompile/d
 resources/kyulee/example/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
 resources/kyulee/example/target/surefire-reports/com.example.AppTest.txt
 resources/kyulee/example/target/surefire-reports/TEST-com.example.AppTest.xml
+resources/tomcat/whoana/logs
+resources/tomcat/whoana/.run.bat.swp
