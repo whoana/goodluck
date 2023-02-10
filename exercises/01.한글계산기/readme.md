@@ -30,7 +30,7 @@
     <!-- 계산기 라이브러리 디펜던시 -->
     <dependency>
       <groupId>example</groupId>
-      <artifactId>calculator</artifactId>
+      <artifactId>korea-calculator</artifactId>
       <version>1.0</version>
     </dependency>
 
