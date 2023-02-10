@@ -16,7 +16,7 @@
    연산자는 더하기(+)만 존재하는 것으로 가정하겠습니다.
    계산될 항의 개수는 최대 3개를 초과하지 않도록 가정하겠습니다.
    계산될 항의 한글 숫자들은 온전한 숫자 값으로 표현가능한 것으로 가정하겠습니다.
-   ("이백삼억" 과 같은 잘못된 값은 입력되지 않는 것으로 가정)    
+   ("이백삼억" 과 같은 잘못된 값은 입력되지 않는 것으로 가정)
 
 2. 작성 언어
    자바언어로 개발해 주세요 .
@@ -30,8 +30,12 @@
    <!-- 계산기 라이브러리 디펜던시 -->
    <dependency>
      <groupId>example</groupId>
-     <artifactId>korea-calculator</artifactId>
+     <artifactId>whoana-korean-calculator</artifactId>
      <version>1.0</version>
    </dependency>
 
    말하자면, 라이브러리 프로젝트 와 메인출력 프로젝트를 각각 작성하면 되겠습니다.
+
+5. 소스 제출
+   아래 위치에 2개의 프로젝트를 제출
+   exercises/[개발자이름]/
