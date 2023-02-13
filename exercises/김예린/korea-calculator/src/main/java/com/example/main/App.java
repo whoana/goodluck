@@ -1,7 +1,8 @@
 package com.example.main;
 import java.util.Arrays;
 
-import example.*;
+import example.koreaCalculator;
+
 /**
  * Hello world!
  *

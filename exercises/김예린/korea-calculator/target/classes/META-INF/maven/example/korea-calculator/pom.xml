@@ -16,9 +16,9 @@
     </dependency>
    
     <dependency>
-      <groupId>example</groupId>
-  <artifactId>koreaCalculator</artifactId>
-   <version>1.0-SNAPSHOT</version>
+      <groupId>koreaLib</groupId>
+  		<artifactId>koreaCalculator</artifactId>
+   		<version>1.0-SNAPSHOT</version>
        <scope>test</scope>
     </dependency>
   </dependencies>
