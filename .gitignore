@@ -13,3 +13,6 @@ resources/kyulee/example/target/surefire-reports/com.example.AppTest.txt
 resources/kyulee/example/target/surefire-reports/TEST-com.example.AppTest.xml
 resources/tomcat/whoana/logs
 resources/tomcat/whoana/.run.bat.swp
+exercises/01.한글계산기/korean-calculator/app/target
+exercises/01.한글계산기/korean-calculator/lib/target
+exercises/01.한글계산기/korean-calculator/app/target/classes/com/whoana/app/Main.class
