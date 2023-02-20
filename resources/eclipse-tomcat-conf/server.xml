@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Server port="8005" shutdown="SHUTDOWN">
+	<Listener
+		className="org.apache.catalina.startup.VersionLoggerListener" />
+	<Listener SSLEngine="on"
+		className="org.apache.catalina.core.AprLifecycleListener" />
+	<Listener
+		className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+	<Listener
+		className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+	<Listener
+		className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
+	<GlobalNamingResources>
+		<Resource auth="Container"
+			description="User database that can be updated and saved"
+			factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+			name="UserDatabase" pathname="conf/tomcat-users.xml"
+			type="org.apache.catalina.UserDatabase" />
+<!--
+		<Resource auth="Container" defaultAutoCommit="false" driverClassName="oracle.jdbc.driver.OracleDriver"
+			factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" initialSize="5" maxActive="100"
+			maxWait="10000" minEvictableIdleTimeMillis="3600000" minIdle="5" name="jdbc/iip-db"
+			password="iipshl" testOnBorrow="true" testOnReturn="false" testWhileIdle="true"
+			timeBetweenEvictionRunsMillis="10000" type="javax.sql.DataSource" url="jdbc:oracle:thin:@idc.mocomsys.com:31521:IIP"
+			username="iipshl" validationQuery="SELECT 1 FROM DUAL"/>
+-->
+
+ <!--
+		<Resource auth="Container"
+			defaultAutoCommit="false"
+			driverClassName="org.postgresql.Driver"
+			factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+			initialSize="5"
+			maxActive="20"
+			maxWait="10000"
+			minEvictableIdleTimeMillis="3600000"
+			minIdle="5" name="jdbc/iip-db"
+			password="iip"
+			testOnBorrow="true"
+			testOnReturn="false"
+			testWhileIdle="true"
+			timeBetweenEvictionRunsMillis="10000"
+			type="javax.sql.DataSource"
+			url="jdbc:postgresql://10.10.1.10:5432/iipdb" username="iip"
+			validationQuery="SELECT count(*) from foo" />
+ -->
+
+
+ <Resource auth="Container"
+      defaultAutoCommit="false"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+      initialSize="5"
+      maxActive="100"
+      maxWait="10000"
+      minEvictableIdleTimeMillis="3600000"
+      minIdle="5"
+      name="jdbc/iip-db"
+      password="iipnh"
+      testOnBorrow="true"
+      testOnReturn="false"
+      testWhileIdle="true"
+      timeBetweenEvictionRunsMillis="10000"
+      type="javax.sql.DataSource"
+      url="jdbc:oracle:thin:@idc.mocomsys.com:31521:IIP"
+      username="iipnh"
+      validationQuery="SELECT 1 FROM DUAL" />
+
+<!--
+	<Resource auth="Container"
+      defaultAutoCommit="false"
+      driverClassName="com.tmax.tibero.jdbc.TbDriver"
+      factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+      initialSize="5"
+      maxActive="100"
+      maxWait="10000"
+      minEvictableIdleTimeMillis="3600000"
+      minIdle="5"
+      name="jdbc/iip-db"
+      password="iip_moel"
+      testOnBorrow="true"
+      testOnReturn="false"
+      testWhileIdle="true"
+      timeBetweenEvictionRunsMillis="10000"
+      type="javax.sql.DataSource"
+      url="jdbc:tibero:thin:@10.10.1.139:8629:SCMP_UCP"
+      username="iip_moel"
+      validationQuery="SELECT 1 FROM DUAL" />
+-->
+
+	</GlobalNamingResources>
+
+	<Service name="Catalina">
+		<Connector SSLEnabled="true" clientAuth="false"
+			keystoreFile="${user.home}/.keystore" keystorePass="tomcat"
+			maxThreads="200" port="443"
+			protocol="org.apache.coyote.http11.Http11NioProtocol" scheme="https"
+			secure="true" sslProtocol="TLS" />
+
+		<Connector connectionTimeout="20000" port="8080"
+			protocol="HTTP/1.1" redirectPort="8443" />
+
+		<Engine defaultHost="localhost" name="Catalina">
+			<Realm className="org.apache.catalina.realm.LockOutRealm">
+				<Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+					resourceName="UserDatabase" />
+			</Realm>
+			<Host appBase="webapps" autoDeploy="true" name="localhost"
+				unpackWARs="true">
+				<Valve className="org.apache.catalina.valves.AccessLogValve"
+					directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b"
+					prefix="localhost_access_log" suffix=".txt" />
+				<Context docBase="mint-front" path="/mint" reloadable="true"
+					source="org.eclipse.jst.jee.server:mint-front" />
+			</Host>
+		</Engine>
+	</Service>
+
+</Server>
