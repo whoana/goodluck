@@ -37,8 +37,18 @@
 [미팅]
     
     [예정]
-        
+    
     [완료]
+        2023.02.22
+            3 개발환경 - eclipse
+            IIP 소스 리뷰
+            IIP 이클립스 WTP 환경 배포 
+            IIP 외부 톰캣 배포   
+
+        2023.02.20
+            3 개발환경 - eclipse
+            IIP 소스 checkout, maven 빌드, server 설정, database 설정  
+
         2023.02.14
             3 개발환경 - eclipse, vsc
             한글계산기 작성 코드 리뷰

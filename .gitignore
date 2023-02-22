@@ -38,3 +38,7 @@ exercises/김규리/calculators/calclibrary/.classpath
 exercises/김규리/calculators/calclibrary/.project
 exercises/김규리/calculators/calmain/.classpath
 exercises/김규리/calculators/calmain/.project
+exercises/김규리/calculators/.project
+exercises/김규리/calculators/calclibrary/.project
+exercises/김규리/calculators/calmain/.project
+resources/tomcat/docker/tomcat8/webapps/mint-front-product-3.0.0.war

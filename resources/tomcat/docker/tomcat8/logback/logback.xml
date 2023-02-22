@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds" >
+
+<!--	<property name="APP_LOG_LEVEL" value="debug" />-->
+<!--	<property name="3RD_LOG_LEVEL" value="debug" />-->
+	<property name="APP_LOG_LEVEL" value="error" />
+	<property name="3RD_LOG_LEVEL" value="error" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%-12.12d %5p [%20.20thread] %30.30C{3}:%4.4L  - %m%n</Pattern>
+		</layout>
+	</appender>
+
+
+	<appender name="FILE"	class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${IIP_LOG_HOME}//log//logFile.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${IIP_LOG_HOME}//log//logFile.%i.log</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>30</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy  class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>20MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%25.25thread]	%40.40C{3}%4.4L - %m%n</Pattern>
+		</encoder>
+	</appender>
+
+
+	<appender name="FILE-WEBSOCKET" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${IIP_LOG_HOME}//log//websocket.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${IIP_LOG_HOME}//log//websocket.%i.log</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>30</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy  class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>20MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%25.25thread] %40.40C{3}:%4.4L - %m%n</Pattern>
+		</encoder>
+	</appender>
+
+
+	<!-- Application Loggers -->
+	<logger name="pep.per.mint">
+		<level value="${APP_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="pep.per.mint.database">
+		 <level value="${3RD_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="pep.per.mint.common">
+		<level value="${APP_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="pep.per.mint.front">
+		<level value="${APP_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="pep.per.mint.websocket" additivity="false">
+		<level value="${APP_LOG_LEVEL}" />
+		<appender-ref ref="FILE-WEBSOCKET"/>
+	</logger>
+
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework.core">
+		<level value="${3RD_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="org.springframework.beans">
+		<level value="${3RD_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="org.springframework.context">
+		<level value="${3RD_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="${3RD_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="pep.per.mint.database.persistance.FooMapper">
+		<level value="${3RD_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="org.h2.tools.Server">
+		<level value="${3RD_LOG_LEVEL}" />
+	</logger>
+
+	<logger name="org.mybatis">
+		<level value="${3RD_LOG_LEVEL}"/>
+	</logger>
+
+	<logger name="jdbc.connection" additivity="false">
+    	<level value="${3RD_LOG_LEVEL}" />
+    	<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="jdbc.sqltiming" additivity="false">
+	    <level value="${3RD_LOG_LEVEL}" />
+	    <appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="java.sql.ResultSet" additivity="false">
+	    <level value="${3RD_LOG_LEVEL}" />
+	    <appender-ref ref="FILE" />
+	</logger>
+	<logger name="jdbc.resultset" additivity="false">
+	    <level value="${3RD_LOG_LEVEL}" />
+	    <appender-ref ref="FILE" />
+	</logger>
+	<logger name="jdbc.audit" additivity="false">
+	    <level value="${3RD_LOG_LEVEL}" />
+	    <appender-ref ref="FILE" />
+	</logger>
+	<logger name="jdbc.sqlonly" additivity="false">
+	    <level value="${3RD_LOG_LEVEL}" />
+	    <appender-ref ref="FILE" />
+	</logger>
+	<logger name="jdbc.connection" additivity="false">
+	    <level value="${3RD_LOG_LEVEL}" />
+	    <appender-ref ref="FILE" />
+	</logger>
+	<logger name="java.sql" additivity="false">
+	    <level value="${3RD_LOG_LEVEL}" />
+	    <appender-ref ref="FILE" />
+	</logger>
+	<logger name="jdbc.resultsettable" additivity="false">
+	    <level value="${3RD_LOG_LEVEL}" />
+	    <appender-ref ref="FILE" />
+	</logger>
+
+	<root level="error">
+<!--
+		<appender-ref ref="STDOUT" />
+-->
+		<appender-ref ref="FILE" />
+
+	</root>
+</configuration>
