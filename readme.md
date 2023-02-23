@@ -12,13 +12,13 @@
         2.2 ex-erd
         2.3 database server
         2.4 database client
-        2.5 sql standard    ----------> 2023.01.31 finished
+        2.5 sql standard     ----------> 2023.01.31 finished
 
     03 개발환경
         3.1 java
         3.2 maven
         3.3 tomcat        
-        3.4 eclipse, sts, vsc
+        3.4 eclipse, sts, vsc ----------> 2023.02.23 finished
 
     04 Language
         4.1 java
@@ -37,7 +37,7 @@
 [미팅]
     
     [예정]
-    
+
     [완료]
         2023.02.22
             3 개발환경 - eclipse
