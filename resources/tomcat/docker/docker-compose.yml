@@ -6,13 +6,13 @@ services:
     environment:
       - TZ=Asia/Seoul
     volumes:
-      - /Users/whoana/DEV/docker-home/tomcat8/logs:/usr/local/tomcat/logs
-      - /Users/whoana/DEV/docker-home/tomcat8/upload:/usr/local/tomcat/upload
-      - /Users/whoana/DEV/docker-home/tomcat8/logback/logback.xml:/usr/local/tomcat/logback/logback.xml
-      - /Users/whoana/DEV/docker-home/tomcat8/bin/catalina.sh:/usr/local/tomcat/bin/catalina.sh
-      - /Users/whoana/DEV/docker-home/tomcat8/conf/server.xml:/usr/local/tomcat/conf/server.xml
-      - /Users/whoana/DEV/docker-home/tomcat8/conf/context.xml:/usr/local/tomcat/conf/context.xml
-      - /Users/whoana/DEV/docker-home/tomcat8/webapps/mint-front-product-3.0.0.war:/usr/local/tomcat/webapps/mint.war
-      - /Users/whoana/DEV/docker-home/tomcat8/lib/ojdbc6-11.2.0.3.jar:/usr/local/tomcat/lib/ojdbc6-11.2.0.3.jar
+      - C:\mocomsys\docker-home\tomcat8\logs:\usr\local\tomcat\logs
+      - C:\mocomsys\docker-home\tomcat8\upload:\usr\local\tomcat\upload
+      - C:\mocomsys\docker-home\tomcat8\logback\logback.xml:\usr\local\tomcat\logback\logback.xml
+      - C:\mocomsys\docker-home\tomcat8\bin\catalina.sh:\usr\local\tomcat\bin\catalina.sh
+      - C:\mocomsys\docker-home\tomcat8\conf\server.xml:\usr\local\tomcat\conf\server.xml
+      - C:\mocomsys\docker-home\tomcat8\conf\context.xml:\usr\local\tomcat\conf\context.xml
+      - C:\mocomsys\docker-home\tomcat8\webapps\mint-front-product-3.0.0.war:\usr\local\tomcat\webapps\mint.war
+      - C:\mocomsys\docker-home\tomcat8\lib\ojdbc6-11.2.0.3.jar:\usr\local\tomcat\lib\ojdbc6-11.2.0.3.jar
     ports:
       - 18080:8080
