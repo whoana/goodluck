@@ -7,7 +7,7 @@
         1.2 iip
         1.3 개발업무
 
-    02 데이터베이스 
+    02 데이터베이스
         2.1 schema
         2.2 ex-erd
         2.3 database server
@@ -17,7 +17,7 @@
     03 개발환경
         3.1 java
         3.2 maven
-        3.3 tomcat        
+        3.3 tomcat
         3.4 eclipse, sts, vsc ----------> 2023.02.23 finished
 
     04 Language
@@ -30,24 +30,27 @@
         5.3 mybatis
         5.4 kendo-ui
 
-    06 실전개발 
+    06 실전개발
         6.1 backend
         6.2 frontend
 
 [미팅]
-    
+
     [예정]
 
     [완료]
+        2023.02.28
+            IIP 소스 리뷰
+            
         2023.02.22
             3 개발환경 - eclipse
             IIP 소스 리뷰
-            IIP 이클립스 WTP 환경 배포 
-            IIP 외부 톰캣 배포   
+            IIP 이클립스 WTP 환경 배포
+            IIP 외부 톰캣 배포
 
         2023.02.20
             3 개발환경 - eclipse
-            IIP 소스 checkout, maven 빌드, server 설정, database 설정  
+            IIP 소스 checkout, maven 빌드, server 설정, database 설정
 
         2023.02.14
             3 개발환경 - eclipse, vsc
@@ -63,20 +66,20 @@
             3 개발환경 - java
 
         2023.01.31
-            SQL 표준 작성 과정 마무리  
+            SQL 표준 작성 과정 마무리
 
         2023.01.27
-            SQL 표준 JOIN STATEMENT 작성 실습 
+            SQL 표준 JOIN STATEMENT 작성 실습
                 인터페이스 리스트 및  상세 정보 조회(INNER OUTER 조인)
 
         2023.01.19
-            SQL 표준 JOIN STATEMENT 작성 실습 
-                인터페이스 정보 조회(공통코드 조인) 
+            SQL 표준 JOIN STATEMENT 작성 실습
+                인터페이스 정보 조회(공통코드 조인)
 
         2023.01.18
             Docker 오라클환경구축
-            ERD DB 반영 
-            SQL 표준 JOIN STATEMENT 작성법            
+            ERD DB 반영
+            SQL 표준 JOIN STATEMENT 작성법
             TAN0201, TSU0301 데이터 copy 본 로딩
 
         2023.01.16 규리, 예린 성환
@@ -97,7 +100,7 @@
     docs/01.시작.pdf        // 2023.01.09, 첫 미팅
     docs/02.IIP소개         // 2023.01.16
     docs/03.database.txt   // 2023.01.16
-    resources/TAN0201.sql  // 2023.01.18, 인터페이스 데이터(조인문 작성용 샘플 데이터) 
-    resources/TSU0301.sql  // 2023.01.18, 공통코드 데이터 (조인문 작성용 샘플 데이터) 
+    resources/TAN0201.sql  // 2023.01.18, 인터페이스 데이터(조인문 작성용 샘플 데이터)
+    resources/TSU0301.sql  // 2023.01.18, 공통코드 데이터 (조인문 작성용 샘플 데이터)
     resources/인터페이스리스트및상세조회.sql  // 2023.01.27 (조인문 GUIDE)
     exercises/01.한글계산기
