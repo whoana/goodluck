@@ -20,7 +20,7 @@
         3.3 tomcat
         3.4 eclipse, sts, vsc ----------> 2023.02.23 finished
 
-    04 Language
+    04 Language              <----------  기관 교육으로 대체   
         4.1 java
         4.2 javascript
 
