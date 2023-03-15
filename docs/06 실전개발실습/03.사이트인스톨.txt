@@ -1,0 +1,10 @@
+
+[개발서버정보]
+    ssh 접속 :
+        ssh iip@10.10.1.10
+    password : 
+        iip
+    WAS 설치 위치 
+        /home/iip/goodluck/gyulee/apache-tomcat-9.0.73 (port : 58080)
+        /home/iip/goodluck/whoana/apache-tomcat-9.0.73 (port : 18080)
+        /home/iip/goodluck/xxrin/apache-tomcat-9.0.73  (port : 48080)
