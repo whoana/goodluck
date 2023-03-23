@@ -8,3 +8,35 @@
         /home/iip/goodluck/gyulee/apache-tomcat-9.0.73 (port : 58080)
         /home/iip/goodluck/whoana/apache-tomcat-9.0.73 (port : 18080)
         /home/iip/goodluck/xxrin/apache-tomcat-9.0.73  (port : 48080)
+
+[실습 DATABASE]
+
+    host : idc.mocomsys.com
+    port : 31521
+    id/pass : yerrin/yerrin
+              gyulee/gyulee
+
+[IIP 설치 절차]
+
+    1 zoon 설치 및 설정 
+    2 기초 데이터 (100, 200번) 준비 : ${ZOON_HOME}/bin/get-data-mint.sh  
+    3 사이트 설치 : ${ZOON_HOME}/bin/install-mint.sh
+    4 was(톰캣기준) 설정 : 
+        1) 오라클 jdbc.jar 배포 --> ${CATALINA_HOME}/lib/
+        2) database resource 설정 --> ${CATALINA_HOME}/conf/server.xml,
+                                     ${CATALINA_HOME}/conf/context.xml
+        3) 환경변수 설정  
+            cd ${CATALINA_HOME}/bin
+            vi setenv.sh 
+            아래 내용 추가 (IIP_LOG_HOME, logback.configurationFile 환경변수 설정)
+            export JAVA_OPTS="$JAVA_OPTS -DIIP_LOG_HOME=/Users/whoana/DEV/apps/logs" 
+            export JAVA_OPTS="$JAVA_OPTS -Dlogback.configurationFile=/Users/whoana/DEV/workspace/mint/mint-front/logback/logback.xml"
+
+[Docker 환경구성]
+
+
+[IIP 에이전트 설치]
+
+
+
+
