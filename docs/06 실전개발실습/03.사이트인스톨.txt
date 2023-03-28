@@ -22,8 +22,8 @@
     2 기초 데이터 (100, 200번) 준비 : ${ZOON_HOME}/bin/get-data-mint.sh  
     3 사이트 설치 : ${ZOON_HOME}/bin/install-mint.sh
     4 was(톰캣기준) 설정 : 
-        1) 오라클 jdbc.jar 배포 --> ${CATALINA_HOME}/lib/
-        2) database resource 설정 --> ${CATALINA_HOME}/conf/server.xml,
+        1) 오라클 jdbc.jar 배포 --> ${CATALINA_HOME}/lib/ (* 외부)
+        2) database resource 설정 --> ${CATALINA_HOME}/conf/server.xml, (* 외부)
                                      ${CATALINA_HOME}/conf/context.xml
         3) 환경변수 설정  
             cd ${CATALINA_HOME}/bin
@@ -33,7 +33,7 @@
             export JAVA_OPTS="$JAVA_OPTS -Dlogback.configurationFile=/Users/whoana/DEV/workspace/mint/mint-front/logback/logback.xml"
 
 [Docker 환경구성]
-
+    IIP 설치 절차 4번 항목이 힌트 
 
 [IIP 에이전트 설치]
 
